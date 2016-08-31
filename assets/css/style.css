@@ -1,0 +1,52 @@
+html {
+	background: linear-gradient(45deg, #7986cb, #80deea);
+	height: 100%;
+}
+
+#player1 {
+	margin-top: 20px;
+	margin: 10px;
+	background-color: #d32f2f;
+	color: white;
+	height: 230px;
+	border-radius: 20px;
+}
+
+#player1Buttons {
+	margin-top: 10px;
+}
+
+#player1Buttons a {
+	width: 150px;
+	height: 63px;
+	background-color: #d32f2f;
+	border-radius: 20px;
+}
+
+#player1Buttons a:hover {
+	background-color: #26a69a;
+}
+
+#player2 {
+	margin-top: 20px;
+	margin: 10px;
+	background-color: #ffb74d;
+	color: white;
+	height: 230px;
+	border-radius: 20px;
+}
+
+#player2Buttons {
+	margin-top: 10px;
+}
+
+#player2Buttons a {
+	width: 150px;
+	height: 63px;
+	background-color: #ffb74d;
+	border-radius: 20px;
+}
+
+#player2Buttons a:hover {
+	background-color: #26a69a;
+}
