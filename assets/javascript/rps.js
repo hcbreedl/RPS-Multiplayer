@@ -2,8 +2,6 @@ $( document ).ready(function() {
 console.log( "ready!" );
 
 //----------------------------------
-var keySelections = ['r', 'p', 's'];
-//----------------------------------
 var player1Wins = 0;
 var player2Wins = 0;
 //----------------------------------
@@ -15,35 +13,76 @@ var ties = 0;
 var player1Choice = "";
 var player2Choice = "";
 //----------------------------------
-// var console = function() {
-// 	console.log("Player 1 Wins: " + player1Wins);
-// 	console.log("Player 1 Losses: " + player1Losses);
-// 	console.log("Player 2 Wins: " + player2Wins);
-// 	console.log("Player 2 Losses: " + player2Losses);
-// }
+var resetButtons = function() {
+	$('#rock1').hide();
+	$('#paper1').hide();
+	$('#scissors1').hide();
+	$('#rock2').hide();
+	$('#paper2').hide();
+	$('#scissors2').hide();
+
+	$('#rock1').fadeIn(2000);
+	$('#paper1').fadeIn(2000);
+	$('#scissors1').fadeIn(2000);
+	$('#rock2').fadeIn(2000);
+	$('#paper2').fadeIn(2000);
+	$('#scissors2').fadeIn(2000);
+
+	player1Choice = "";
+	player2Choice = "";
+}
+
+var status = function() {
+	console.log("--------------------------------")
+	console.log("Player 1 Wins: " + player1Wins);
+	console.log("Player 1 Losses: " + player1Losses);
+	console.log("Player 2 Wins: " + player2Wins);
+	console.log("Player 2 Losses: " + player2Losses);
+	console.log("Ties: " + ties);
+	console.log("--------------------------------")
+
+	$('#player1Wins').html(player1Wins);
+	$('#player1Losses').html(player1Losses);
+	$('#player2Wins').html(player2Wins);
+	$('#player2Losses').html(player2Losses);
+	$('.ties').html(ties);
+}
 
 var decision = function() {
 	if ((player1Choice == 'rock') && (player2Choice == 'scissors')){
-			player1Wins++;
+			player1Wins = player1Wins + 1;
 			player2Losses++;
-			// console();
+			status();
+			resetButtons();
 		}else if ((player1Choice == 'rock') && (player2Choice == 'paper')){
 			player1Losses++;
 			player2Wins++;
+			status();
+			resetButtons();
 		}else if ((player1Choice == 'scissors') && (player2Choice == 'rock')){
 			player1Losses++;
 			player2Wins++;
+			status();
+			resetButtons();
 		}else if ((player1Choice == 'scissors') && (player2Choice == 'paper')){
 			player1Wins++;
 			player2Losses++;
+			status();
+			resetButtons();
 		}else if ((player1Choice == 'paper') && (player2Choice == 'rock')){
 			player1Wins++;
 			player2Losses++;
+			status();
+			resetButtons();
 		}else if ((player1Choice == 'paper') && (player2Choice == 'scissors')){
 			player1Losses++;
 			player2Wins++;
+			status();
+			resetButtons();
 		}else if (player1Choice == player2Choice){
 			ties++;
+			status();
+			resetButtons();
 		}
 }
 
@@ -77,21 +116,14 @@ player1Selection();
 var player2Selection = function () {
 	$('#rock2').on('click', function() {
 		player2Choice = "rock";
-		console.log("Player 1 chose: " + player2Choice);
-		$('#paper2').hide();
-		$('#scissors2').hide();
+		decision();
 	})
 	$('#paper2').on('click', function() {
 		player2Choice = "paper";
-		console.log("Player 1 chose: " + player2Choice);
-		$('#rock2').hide();
-		$('#scissors2').hide();
+		decision();
 	})
 	$('#scissors2').on('click', function() {
 		player2Choice = "scissors";
-		console.log("Player 1 chose: " + player2Choice);
-		$('#rock2').hide();
-		$('#paper2').hide();
 		decision();
 	})
 }
