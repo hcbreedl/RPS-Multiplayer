@@ -1,6 +1,17 @@
 $( document ).ready(function() {
 console.log( "ready!" );
 
+var config = {
+    apiKey: "AIzaSyDPdw63EUv5qEHARTM2rG0y1pR5TsP8R94",
+    authDomain: "rps-multiplayer-a0797.firebaseapp.com",
+    databaseURL: "https://rps-multiplayer-a0797.firebaseio.com",
+    storageBucket: "rps-multiplayer-a0797.appspot.com",
+  };
+
+firebase.initializeApp(config);
+
+database = firebase.database();
+
 //----------------------------------
 var player1Wins = 0;
 var player2Wins = 0;
@@ -46,6 +57,16 @@ var status = function() {
 	$('#player2Wins').html(player2Wins);
 	$('#player2Losses').html(player2Losses);
 	$('.ties').html(ties);
+
+	database.ref().set({
+		Player1Wins: player1Wins,
+		Player1Losses: player1Losses,
+		Player2Wins: player2Wins,
+		Player2Losses: player2Losses,
+		Ties: ties
+	})
+
+	return false;
 }
 
 var decision = function() {
