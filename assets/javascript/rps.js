@@ -1,6 +1,14 @@
 $( document ).ready(function() {
 console.log( "ready!" );
 
+$('#player1').hide();
+$('#player1Buttons').hide();
+$('#player2').hide();
+$('#player2Buttons').hide();
+$('#chat').hide();
+$('#chat-text').hide();
+$('#chat-text-submit').hide();
+
 var config = {
     apiKey: "AIzaSyDPdw63EUv5qEHARTM2rG0y1pR5TsP8R94",
     authDomain: "rps-multiplayer-a0797.firebaseapp.com",
@@ -63,7 +71,8 @@ var status = function() {
 		Player1Losses: player1Losses,
 		Player2Wins: player2Wins,
 		Player2Losses: player2Losses,
-		Ties: ties
+		Ties: ties,
+		// chat: chat
 	})
 
 	return false;
@@ -106,6 +115,22 @@ var decision = function() {
 			resetButtons();
 		}
 }
+
+$('#selectPlayer1').on('click', function() {
+	$('#selectPlayer1').fadeOut(1000);
+	$('#player1').fadeIn(2000);
+	$('#player1Buttons').fadeIn(2000);
+
+})
+
+$('#selectPlayer2').on('click', function() {
+	$('#selectPlayer2').fadeOut(1000);
+	$('#player2').fadeIn(2000);
+	$('#player2Buttons').fadeIn(2000);
+	$('#chat').fadeIn(2000);
+	$('#chat-text').fadeIn(2000);
+	$('#chat-text-submit').fadeIn(2000);
+})
 
 /* Player1 and Player2 both submit their choice */
 var player1Selection = function () {
