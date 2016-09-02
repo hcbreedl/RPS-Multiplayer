@@ -4,11 +4,11 @@ html {
 }
 
 #selectPlayer1 {
-
+	margin: 25px;
 }
 
 #selectPlayer2 {
-
+	margin: 25px;
 }
 
 #player1 {
@@ -64,6 +64,8 @@ html {
 	border-radius: 5px;
 	padding: 10px;
 	width: 816px;
+	height: 150px;
+	overflow: scroll;
 }
 
 #chat-text {

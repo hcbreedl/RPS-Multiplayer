@@ -174,6 +174,14 @@ var player2Selection = function () {
 	})
 }
 
+$('#chat-text-submit').on('click', function () {
+	text = $('#chat-text-input').val().trim();
+	console.log(text);
+	newLine = $('<tr><td>' + text + '</td></tr>');
+	$('#chat-table').prepend(newLine);
+	$('#chat-text-input').val("");
+})
+
 
 
 });
