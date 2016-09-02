@@ -117,14 +117,14 @@ var decision = function() {
 }
 
 $('#selectPlayer1').on('click', function() {
-	$('#selectPlayer1').fadeOut(1000);
+	$('#selectPlayer1').remove();
 	$('#player1').fadeIn(2000);
 	$('#player1Buttons').fadeIn(2000);
 
 })
 
 $('#selectPlayer2').on('click', function() {
-	$('#selectPlayer2').fadeOut(1000);
+	$('#selectPlayer2').remove();
 	$('#player2').fadeIn(2000);
 	$('#player2Buttons').fadeIn(2000);
 	$('#chat').fadeIn(2000);
@@ -181,6 +181,16 @@ $('#chat-text-submit').on('click', function () {
 	$('#chat-table').prepend(newLine);
 	$('#chat-text-input').val("");
 })
+
+$(document).keypress(function(e) {
+  if(e.which == 13) {
+    text = $('#chat-text-input').val().trim();
+	console.log(text);
+	newLine = $('<tr><td>' + text + '</td></tr>');
+	$('#chat-table').prepend(newLine);
+	$('#chat-text-input').val("");
+  }
+});
 
 
 
