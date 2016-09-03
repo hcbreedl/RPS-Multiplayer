@@ -1,7 +1,7 @@
-html {
+/*html {
 	background: linear-gradient(45deg, #7986cb, #80deea);
 	height: 100%;
-}
+}*/
 
 #selectPlayer1 {
 	margin: 25px;
@@ -79,4 +79,113 @@ html {
 	height: 50px;
     margin-left: 10px;
     width: 100px;
+}
+
+@media screen and (max-width: 850px) {
+    #player1Buttons a {
+	width: 100px;
+	height: 63px;
+	background-color: #d32f2f;
+	border-radius: 20px;
+	}
+
+	#player2Buttons a {
+	width: 100px;
+	height: 63px;
+	background-color: #ffb74d;
+	border-radius: 20px;
+	}
+
+	#chat-text {
+	background-color: #eceff1;
+	border-radius: 5px;
+	padding: 10px;
+	width: 705px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+    #player1Buttons a {
+	width: 100px;
+	height: 63px;
+	background-color: #d32f2f;
+	border-radius: 20px;
+	}
+
+	#player2Buttons a {
+	width: 100px;
+	height: 63px;
+	background-color: #ffb74d;
+	border-radius: 20px;
+	}
+}
+
+@media screen and (max-width: 640px) {
+    #player1Buttons a {
+	width: 50px;
+	height: 63px;
+	background-color: #d32f2f;
+	border-radius: 20px;
+	}
+
+	#player2Buttons a {
+	width: 50px;
+	height: 63px;
+	background-color: #ffb74d;
+	border-radius: 20px;
+	}
+
+	#chat-text {
+	background-color: #eceff1;
+	border-radius: 5px;
+	padding: 10px;
+	width: 450px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+    #player1Buttons a {
+	width: 20px;
+	height: 63px;
+	background-color: #d32f2f;
+	border-radius: 20px;
+	}
+
+	#player2Buttons a {
+	width: 20px;
+	height: 63px;
+	background-color: #ffb74d;
+	border-radius: 20px;
+	}
+
+	#chat-text {
+	background-color: #eceff1;
+	border-radius: 5px;
+	padding: 10px;
+	width: 364px;
+	}
+}
+
+@media screen and (max-width: 320px) {
+    #player1Buttons a {
+	width: 10px;
+	height: 49px;
+	background-color: #d32f2f;
+	border-radius: 20px;
+	}
+
+	#player2Buttons a {
+	width: 10px;
+	height: 49px;
+	background-color: #ffb74d;
+	border-radius: 20px;
+	}
+
+	#chat-text {
+	background-color: #eceff1;
+	border-radius: 5px;
+	padding: 10px;
+	width: 300px;
+	}
+
 }

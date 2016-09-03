@@ -52,13 +52,6 @@ var resetButtons = function() {
 }
 
 var status = function() {
-	console.log("--------------------------------")
-	console.log("Player 1 Wins: " + player1Wins);
-	console.log("Player 1 Losses: " + player1Losses);
-	console.log("Player 2 Wins: " + player2Wins);
-	console.log("Player 2 Losses: " + player2Losses);
-	console.log("Ties: " + ties);
-	console.log("--------------------------------")
 
 	$('#player1Wins').html(player1Wins);
 	$('#player1Losses').html(player1Losses);
@@ -72,7 +65,6 @@ var status = function() {
 		Player2Wins: player2Wins,
 		Player2Losses: player2Losses,
 		Ties: ties,
-		// chat: chat
 	})
 
 	return false;
